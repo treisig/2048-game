@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>2048</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script type="module" src="engine/game.js"></script>
+    <script type="module" src="engine/view.js"></script>
+    <script type="module" src="engine/2048.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <div id="gameContainer">
+        <div id="instructionsDiv">
+          <p class="instructions">
+            <strong class="instructions">Instructions</strong>: The goal of this
+            game is to combine matching tiles until you reach the legendary 2048
+            tile. Use the arrow keys to move and combine the tiles.
+          </p>
+        </div>
+        <div id="gameBoard"></div>
+        <div id="buttonBox">
+          <div id="scoreDiv">
+            <span id="score">Score: 0</span>
+            <button type="button" id="newGameButton" class="button">
+              New Game
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="modalDiv">
+        <div id="loseModal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">2048</p>
+              <button id="loseClose" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+              <p class="gameText">
+                Oh no, you have lost 😔😔 . Press the X to return the main
+                screen and start a new game. You've got this next time 🏆 !
+              </p>
+            </section>
+          </div>
+        </div>
+        <div id="winModal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">2048</p>
+              <button id="winClose" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+              <p class="gameText">
+                😎 Congratulations, you've won 2048 😎! Press the X to continue
+                playing!
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
